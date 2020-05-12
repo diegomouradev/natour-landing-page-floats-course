@@ -1,0 +1,110 @@
+.pop-up {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba($color-black,.8);
+    top:0;
+    left: 0;
+    z-index: 4000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            position: absolute;
+        top: 3rem;
+        right: 3rem;
+        font-size: 4rem;
+        font-weight: 700;
+        color: $color-grey-dark;
+        text-decoration: none;
+        display: inline-block;
+        line-height: 1rem;
+        }
+
+        &:hover {
+            color: $color-primary;
+            transform: scale(1.2);
+        }
+    }
+
+    &__content {
+        width: 85%;
+        background-color: $color-white;
+        border-radius: .3rem;
+        box-shadow: $card-shadow-1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        overflow: hidden;
+        display: table;
+        opacity: 0;
+        transition: all .4s .2s;
+
+        @include respond (wid-900){
+            display: block;
+        }
+
+    }
+
+    &:target &__content{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__left {
+        width: 33.3333333%;
+        display: table-cell;
+
+        @include respond (wid-900){
+            display: none;
+        }
+
+    }
+
+    &__right {
+        width: 66.66666666%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+
+        @include respond (wid-900){
+            width: 100%;
+            
+        }
+
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+
+
+    }
+
+    &__text {
+        
+    }
+
+    &__paragraph {
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: .1rem solid $color-grey-light-2;
+
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+
+        @include respond (wid-900){
+        column-count: 1;
+        }
+    }
+}

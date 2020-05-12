@@ -1,0 +1,94 @@
+.section-about{
+    background-color: $color-grey-light-1;
+    padding: 20rem 0;
+    margin-top: -20vh;
+    
+    @include respond(wid-900) { 
+        padding: 20rem 10rem 20rem 10rem;
+        margin-top: -15vh;
+    }
+    
+   
+
+}
+
+.section-features{
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+         url(https://res.cloudinary.com/djot2xc6w/image/upload/v1588605796/Natour/img/img_nat-4_kgmgww.jpg);
+    background-size: cover;     
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    @include respond(wid-900) { 
+        padding: 10rem 0 15rem 0;
+    }
+
+
+    & > *{
+        transform: skewY(7deg);
+    }
+
+}
+
+.section-tours{
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 5rem 0;
+    margin-top: -10rem;
+
+   
+}
+
+.section-story{
+    position: relative;
+    padding: 15rem 0;
+
+    @include respond(wid-900){
+        padding: 10rem 0;
+    }
+   
+}
+
+.section-book {
+    background-image: linear-gradient( to right bottom, $color-primary, $color-primary-dark);
+    padding: 15rem 0;
+
+    @include respond(wod-900){
+        padding: 10rem 0;
+    }
+
+    
+}
+
+.book {
+    background-image: linear-gradient(105deg,
+    rgba($color-white, .8) 0%,
+    rgba($color-white, .8) 50%,
+    transparent 50.1%),
+    url(https://res.cloudinary.com/djot2xc6w/image/upload/v1588605799/Natour/img/img_nat-10_tb911j.jpg); 
+    background-size: cover;
+    box-shadow: $card-shadow-2;
+
+    @include respond(wid-900){
+        width: 80%;
+        margin: 0 auto;
+        background-image: linear-gradient(105deg,
+        rgba($color-white, .8) 0%,
+        rgba($color-white, .8) 60%,
+        transparent 100%),
+        url(https://res.cloudinary.com/djot2xc6w/image/upload/v1588605799/Natour/img/img_nat-10_tb911j.jpg); 
+    }
+
+    &__form {
+        width: 50%;
+        padding:  5rem ;
+
+        @include respond(wid-900){
+           width: 90%;
+           margin: 0 auto;
+        }
+    }
+}

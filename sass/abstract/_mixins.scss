@@ -1,0 +1,77 @@
+@mixin clearfix {
+    &::after {
+        content:"";
+        display: table;
+        clear: both;
+    }
+}
+
+// MEDIA QUERY MANAGER
+
+/* $breakpoint argument choices:
+
+1800PX +: wid-1800-more (big screen)
+[1200  -1800] (normal style)
+900 - 1200PX: wid-1200 (tablet landscape mode)
+600 - 900PX: wid-900 (tablet portrait mode)
+400px - 600px: wid-600 (tablet smaller)
+0 - 400PX: wid-400 (mobile)
+
+ /*
+
+/* EM calculation for Media Query
+
+>>> 1EM = 16px 
+
+1800PX +: wid-1800-more (big screen) >>>>>>>>>>>>>>>>> 1800/16 = 112.5em
+[1200  -1800] (normal style) >>>>>>>>>>>>>>>>>>>>>>>>> 1200/16 = 75em
+900 - 1200PX: wid-1200 (tablet landscape mode) >>>>>>> 900/16 = 56.25em
+600 - 900PX: wid-900 (tablet portrait mode) >>>>>>>>>> 600/16 = 37.5em
+400px - 600px: wid-600 (tablet smaller) >>>>>>>>>>>>>> 400/16 = 25em
+0 - 400PX: wid-400 (mobile) >>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+/*Order: Base > typography > general layouts > grid layout > components*/
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == wid-1200 {
+        @media ( max-width:75em ) { @content }; 
+    }
+
+    @if $breakpoint == wid-900 {
+        @media ( max-width:56.25em ) { @content };
+    }
+
+    @if $breakpoint == wid-600 {
+        @media ( max-width:37.5em ) { @content }; 
+    }
+
+    @if $breakpoint == wid-400 {
+        @media ( max-width:25em ) { @content }; 
+    }
+
+    @if $breakpoint == wid-1800-more {
+        @media ( min-width:112.5em ) { @content };
+    }
+}
+
+
+/* ALL MQ CLEAN FOR PAST
+@include respond(wid-1200) { 
+            
+}
+
+@include respond(wid-900) { 
+            
+}
+
+@include respond(wid-600) { 
+            
+}
+
+@include respond(wid-400) { 
+            
+}
+
+*/

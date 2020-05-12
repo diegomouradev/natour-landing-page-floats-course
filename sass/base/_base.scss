@@ -1,0 +1,39 @@
+*,
+*::after
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; // width 1200 - 1800 ? 1 rem = 10px | 10/16 = 62.5%
+
+    @include respond(wid-1200) { // width > 1200 < 900 ? 1 rem = 9px | 9/16 = 56.25%
+        font-size: 56.25%;
+    }
+    
+    @include respond(wid-900) { // width > 900 < 600 ? 1 rem = 8px | 8/16 = 50%
+        font-size: 50%;        
+    }
+    
+    @include respond(wid-600) { // width > 600 < 400 ? 1 rem = 7px | 7/16 = 43.75%
+        font-size: 43.75%;      
+    }
+    
+    @include respond(wid-400) { // width > 400 < 0 ? 1 rem = 6px | 6/16 = 37.50%
+        font-size: 37.50%;            
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+    margin: 0;
+
+    
+    @include respond(wid-900) { 
+        padding: 0rem;
+    }
+
+}
